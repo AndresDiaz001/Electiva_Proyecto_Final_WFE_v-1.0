@@ -17,6 +17,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+//consultas crud Eduard
+router.get('/api/profesiones', profesionesController.List);
+router.get('/api/profesiones/id/:id', profesionesController.ListAt);
+router.delete('/api/profesiones/id/:id', profesionesController.eliminarProfesiones);
+router.patch('/api/profesiones/id/:id', profesionesController.actualizarProfesiones);
+router.post('/api/profesiones/:nombre/:descripcion/:createdAt/:updateAt', profesionesController.crearProfesiones);
 
 
 module.exports = router;

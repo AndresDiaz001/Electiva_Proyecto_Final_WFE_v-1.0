@@ -28,5 +28,23 @@ router.get('/api/estados/id/:id', estadosController.ListAt);
 router.delete('/api/estados/id/:id', estadosController.eliminarEstados);
 router.patch('/api/estados/id/:id', estadosController.actualizarEstados);
 router.post('/api/estados/:pendiente/:aprobado/:rechazado/:createdAt/:updatedAt', estadosController.crearEstado);
+//consultas crud Eduard
+router.get('/api/profesiones', profesionesController.List);
+router.get('/api/profesiones/id/:id', profesionesController.ListAt);
+router.delete('/api/profesiones/id/:id', profesionesController.eliminarProfesiones);
+router.patch('/api/profesiones/id/:id', profesionesController.actualizarProfesiones);
+router.post('/api/profesiones/:nombre/:descripcion/:createdAt/:updateAt', profesionesController.crearProfesiones);
+//Consultas crud Felipe
+router.get('/api/registros', registrosController.List);
+router.get('/api/registros/id/:id', registrosController.ListAt);
+router.delete('/api/registros/id/:id', registrosController.eliminarRegistros);
+router.patch('/api/registros/id/:id', registrosController.actualizarRegistros);
+router.post('/api/registros/:email/:contrasenia/:usuario/:createdAt/:updateAt', registrosController.crearRegistros);
+//Consultas crud Leandro
+router.get('/api/servicios', serviciosController.List);
+router.get('/api/servicios/id/:id', serviciosController.List);
+router.delete('/api/servicios/id/:id', serviciosController.eliminarServicios);
+router.patch('/api/servicios/id/:id', serviciosController.actualizarServicios);
+router.post('/api/servicios/:nombre/:descripcion/:ciudad/:fecha/:valor/:direccion/:createdAt/:updateAt/:id_estado', serviciosController.crearServicio);
 
 module.exports = router;

@@ -16,7 +16,11 @@ const serviciosController= require('../controllers/ServiciosController');
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-
-
+//Consultas crud Leandro
+router.get('/api/servicios', serviciosController.List);
+router.get('/api/servicios/id/:id', serviciosController.List);
+router.delete('/api/servicios/id/:id', serviciosController.eliminarServicios);
+router.patch('/api/servicios/id/:id', serviciosController.actualizarServicios);
+router.post('/api/servicios/:nombre/:descripcion/:ciudad/:fecha/:valor/:direccion/:createdAt/:updateAt/:id_estado', serviciosController.crearServicio);
 
 module.exports = router;

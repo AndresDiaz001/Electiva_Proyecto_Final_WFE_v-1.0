@@ -17,6 +17,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-
+//Consultas crud Felipe
+router.get('/api/registros', registrosController.List);
+router.get('/api/registros/id/:id', registrosController.ListAt);
+router.delete('/api/registros/id/:id', registrosController.eliminarRegistros);
+router.patch('/api/registros/id/:id', registrosController.actualizarRegistros);
+router.post('/api/registros/:email/:contrasenia/:usuario/:createdAt/:updateAt', registrosController.crearRegistros);
 
 module.exports = router;
